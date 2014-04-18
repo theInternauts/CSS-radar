@@ -1,0 +1,290 @@
+/******** Thesaurus Rex ***********/
+#rex {
+    position: fixed;
+    left: -5px;
+    top: 150px;
+}
+
+/********** Build the radar display portal ***********/
+#radar {
+    position:relative;
+    width:400px;
+    height:400px;
+    margin:20px auto;
+    border:3px solid #0c0;
+    background-color:#020;
+}
+
+#radar > * {
+    position:absolute;
+}    
+
+.circle {
+    border-radius:50%;
+    border:1px solid #0c0;
+}
+
+.radar-ring {        
+    left:50%;
+    top:50%;
+}
+
+#ring-3 {
+    width:300px;
+    height:300px;
+    margin:-150px;
+}
+
+#ring-2 {
+    width:200px;
+    height:200px;
+    margin:-100px;
+}
+
+#ring-1 {
+    width:100px;
+    height:100px;
+    margin:-50px;
+}
+
+.line {
+    border-color: rgba(0, 255, 0, 0.2);
+    border-width: 1px;
+    border-style: solid;
+}
+
+#vertical-line {
+    height:100%;
+    left:50%;
+    top:0;        
+}
+
+#horizontal-line {
+    width:100%;
+    top:50%;
+    left:0;
+}
+
+
+/********** Animation keyframes and elements ***********/
+#cricket {
+    right:25%;
+    top:20%;
+}
+
+.blip {
+    width:12px;
+    height:12px;
+    margin:-6px;
+    background-color:#0c0;
+    display: block;
+    -webkit-animation:contact-blink 6s 5.2s linear infinite;
+    animation:contact-blink 6s 5.2s linear infinite;
+}
+
+.blip:hover {
+    background-color:#F00;
+}
+
+.blip:hover:before {
+    content: "";
+    border: 2px solid #F00;
+    display: inline-block;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50px;
+    top: -7px;
+    left: -7px;
+}
+
+.blip:hover:after {
+    left: 30px;
+    color: #F00;
+    font-size: 1em;
+    width: 180px;
+    content: "Crickzilla has been spotted! Email: cricketw@gmail.com to schedule an interview.";
+    border: 1px solid;
+    display: block;
+    padding: 1em;
+    position: relative;
+    background-color: #FFF;
+}
+
+.beacon {
+    left:50%;
+    top:50%;
+    border-style:solid;
+    border-width:8px 200px 8px 0;
+    border-color:transparent;
+    margin-top:-8px;
+    -webkit-transform-origin:0 50%;
+    -ms-transform-origin:0 50%;
+    transform-origin:0 50%;
+}
+
+#beacon {
+    border-right-color:#0c0;
+    -webkit-animation:scan 6s 0s linear infinite;
+    animation:scan 6s 0s linear infinite;
+}
+
+#beacon-75 {
+    border-right-color:rgba(0,204,0,0.75);
+    -webkit-animation:scan 6s 0.03s linear infinite;animation:scan 6s 0.03s linear infinite;
+}
+
+#beacon-50 {
+    border-right-color:rgba(0,204,0,0.5);
+    -webkit-animation:scan 6s 0.06s linear infinite;animation:scan 6s 0.06s linear infinite;
+}
+
+#beacon-25 {
+    border-right-color:rgba(0,204,0,0.25);
+    -webkit-animation:scan 6s 0.09s linear infinite;animation:scan 6s 0.09s linear infinite;
+}
+
+.pulse {
+    border-radius:50%;
+    position:absolute;
+    height: 0px;
+    width: 0px;
+    top:200px;
+    margin:0 auto;
+    border: 2px solid #B4F01B !important;
+    background:none;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;    
+}
+
+#pulse1 { 
+    animation: pulsate 3s infinite;
+    -webkit-animation: pulsate 3s infinite;
+}
+
+#pulse2 {   
+    animation: pulsate 3s 2.5s infinite;
+    -webkit-animation: pulsate 3s 2.5s infinite;
+}
+
+#pulse1 div, #pulse2 div {
+    background-color:#B4F01B; 
+    width:100%;
+    height:100%;
+    border-radius:50%;
+
+    -moz-opacity:0.4; 
+    -webkit-opacity:0.3;
+    
+    animation: fade 3s infinite;
+    -webkit-animation: fade 3s infinite;
+}
+
+
+@-webkit-keyframes scan {
+    from {
+        -webkit-transform:rotate(0);
+    }
+    to {
+        -webkit-transform:rotate(360deg);
+    }
+}
+
+@keyframes scan {
+    from {
+        transform:rotate(0);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+@-webkit-keyframes contact-blink {
+    from {
+        background-color: #0C0;
+        border-color: #0C0;
+    }
+    to {
+        background-color: #040;
+        border-color: #040;
+    }
+}
+
+@keyframes contact-blink {
+    from {
+        background-color: #0C0;
+        border-color: #0C0;
+    }
+    to {
+        background-color: #040;
+        border-color: #040;
+    }
+}
+
+@-webkit-keyframes pulsate {
+    0% {
+        width:0px;
+        height:0px;
+        top:200px;
+        opacity:1;
+    } 
+    90% {
+        width:380px;
+        height:380px;
+        top:7px;
+        opacity:0.5;
+    }
+    100% {
+        width:400px;
+        height:400px;
+        top:7px;
+        opacity:0;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        width:0px;
+        height:0px;
+        top:200px;
+        opacity:1;
+    } 
+    90% {
+        width:380px;
+        height:380px;
+        top:7px;
+        opacity:1;
+    }
+    100% {
+        width:400px;
+        height:400px;
+        top:7px;
+        opacity:0;
+    }
+}
+
+@-webkit-keyframes fade {
+    0% {
+        -webkit-opacity:0.4;
+    } 
+    90% {
+        -webkit-opacity:0.2;
+    }
+    100% {
+        -webkit-opacity:0;
+    }
+}
+
+@keyframes fade {
+    0% {
+        -moz-opacity:0.4;
+    } 
+    90% {
+        -moz-opacity:0.3;
+    }
+    100% {
+        -moz-opacity:0.1;
+    } 
+}
